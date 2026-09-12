@@ -1,0 +1,45 @@
+.header-link {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(199, 214, 195, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: #8f6068;
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        background-color: rgba(199, 214, 195, 0.05);
+
+        &::before {
+            left: 100%;
+        }
+
+        &::after {
+            width: 80%;
+        }
+    }
+
+    &.active {
+        background-color: rgba(199, 214, 195, 0.05);
+    }
+}

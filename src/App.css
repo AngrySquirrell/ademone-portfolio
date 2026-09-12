@@ -1,0 +1,10 @@
+.editable:hover {
+    cursor: pointer;
+}
+
+.contact-info-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 15px;
+    align-items: end;
+}

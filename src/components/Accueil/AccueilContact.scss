@@ -1,0 +1,38 @@
+.contact-button {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        transform: translateY(-2px);
+        background-color: white !important;
+        color: black !important;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.accueil-contact-box {
+    // Transition douce vers le bas de page : coins supérieurs largement arrondis
+    // (remplace l'ancien demi-cercle `border-radius: 50% 50% 0 0 / 100%`)
+    border-radius: 2rem 2rem 0 0;
+    width: 95%;
+
+    @media (min-width: 576px) {
+        border-radius: 2.5rem 2.5rem 0 0;
+        width: 90%;
+    }
+
+    @media (min-width: 768px) {
+        border-radius: 3rem 3rem 0 0;
+        width: 85%;
+    }
+
+    @media (min-width: 992px) {
+        border-radius: 4rem 4rem 0 0;
+        width: 80%;
+    }
+}

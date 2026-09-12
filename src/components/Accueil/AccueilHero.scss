@@ -1,0 +1,17 @@
+.hero-button {
+    background: var(--mantine-color-rosePoudre-7);
+    box-shadow: 1px 5px 5px #00000020;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 2px 8px 15px #00000030;
+        transform: translateY(-2px);
+        background-color: white !important;
+        color: var(--mantine-color-primary-7) !important;
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 1px 3px 5px #00000020;
+    }
+}

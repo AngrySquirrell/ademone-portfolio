@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Light\ Italic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'The Seasons';
+    src: url('/fonts/The.Seasons/The\ Seasons\ Bold\ Italic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --font-sans: 'Poppins', sans-serif;
+    --font-display: 'The Seasons', serif;
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+    font-family: var(--font-display);
+}
+
+* {
+    transition: none;
+}
+
+img {
+    image-rendering: optimizeQuality;
+}
+
+.wave-svg {
+    width: 100%;
+    min-width: 800px;
+    height: 75px;
+    fill: var(--mantine-color-primary-9);
+    transform: rotate(180deg);
+    margin-top: -1px;
+}

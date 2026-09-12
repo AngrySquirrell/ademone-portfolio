@@ -1,0 +1,28 @@
+.footer-link {
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    text-decoration: none !important;
+    width: fit-content;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: #8f6068;
+        transition: width 0.3s ease;
+    }
+
+    &:hover {
+        color: #8f6068 !important;
+        transform: translateX(3px);
+        text-decoration: none !important;
+
+        &::after {
+            width: 100%;
+        }
+    }
+}

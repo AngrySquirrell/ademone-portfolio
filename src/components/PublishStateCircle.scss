@@ -1,0 +1,29 @@
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--start_color);
+    }
+    100% {
+        box-shadow: 0 0 0 4px var(--end_color);
+    }
+}
+
+.animated {
+    animation: pulse 4s infinite;
+}
+
+.draft {
+    // --color: var(--mantine-color-yellow-9);
+    // $color: var(--mantine-color-yellow-9);
+    --start_color: #e67700ff;
+    --end_color: #e6770011;
+}
+.published {
+    // --color: var(--mantine-color-lime-6);
+    --start_color: #82c91eff;
+    --end_color: #82c91e11;
+    // $color: var(--mantine-color-lime-6);
+}
+.archived {
+    --start_color: #868e96ff;
+    --end_color: #868e9611;
+}
