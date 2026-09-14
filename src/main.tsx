@@ -18,14 +18,15 @@ import NotFound from './pages/NotFound';
 import { PocketfieldProvider } from './providers/PocketfieldProvider';
 import SuspenseFallback from './SuspenseFallback';
 import { theme } from './scripts/theme';
-const Accueil = lazy(() => import('./pages/Accueil'));
+import { config } from './config';
+const Page1 = lazy(() => import('./pages/Page1'));
 const Dashboard = lazy(() => import('./pages/Admin/Dashboard'));
 const Gallery = lazy(() => import('./pages/Admin/Gallery'));
-const Contact = lazy(() => import('./pages/Contact'));
+const Page5 = lazy(() => import('./pages/Page5'));
 const Login = lazy(() => import('./pages/Admin/Login'));
-const ParcoursPresentation = lazy(() => import('./pages/ParcoursPresentation'));
-const TransmissionSupervision = lazy(() => import('./pages/TransmissionSupervision'));
-const ApprocheSoins = lazy(() => import('./pages/ApprocheSoins'));
+const Page2 = lazy(() => import('./pages/Page2'));
+const Page3 = lazy(() => import('./pages/Page3'));
+const Page4 = lazy(() => import('./pages/Page4'));
 const POLITIQUE_DE_CONFIDENTIALITE = lazy(() => import('./pages/Legal/PolitiqueDeConfidientalite'));
 const MENTION_LEGALES = lazy(() => import('./pages/Legal/MentionLegales'));
 import './index.css';
@@ -41,23 +42,23 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <Accueil />,
+                element: <Page1 />,
             },
             {
-                path: 'parcours-presentation',
-                element: <ParcoursPresentation />,
+                path: 'page-2',
+                element: <Page2 />,
             },
             {
-                path: 'transmission-supervision',
-                element: <TransmissionSupervision />,
+                path: 'page-3',
+                element: <Page3 />,
             },
             {
-                path: 'approche-soins',
-                element: <ApprocheSoins />,
+                path: 'page-4',
+                element: <Page4 />,
             },
             {
-                path: 'contact',
-                element: <Contact />,
+                path: 'page-5',
+                element: <Page5 />,
             },
             {
                 path: 'politique-de-confidentialite',
@@ -120,8 +121,8 @@ const router = createBrowserRouter([
     },
 ]);
 
-Hypb.initPB('https://pocketbase.louisrvl.fr/', {
-    userCollection: 'audrey_admin',
+Hypb.initPB(config.pocketbase.url, {
+    userCollection: config.pocketbase.userCollection,
     autoCancellation: false,
 });
 

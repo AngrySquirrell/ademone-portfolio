@@ -3,9 +3,9 @@ import { useHover } from '@mantine/hooks';
 import { IconEdit } from '@tabler/icons-react';
 import { useEffect, useMemo, useState } from 'react';
 import { usePocketField } from '../providers/usePocketField';
-import type { audrey_medias } from '../types/globals';
+import type { site_medias } from '../types/globals';
 
-const EditMediaCard = ({ media, onClick }: { media: audrey_medias; onClick: () => void }) => {
+const EditMediaCard = ({ media, onClick }: { media: site_medias; onClick: () => void }) => {
     const { hovered, ref } = useHover();
     const { lookupMediaId } = usePocketField();
     const [mediaSrc, setMediaSrc] = useState<string>('');

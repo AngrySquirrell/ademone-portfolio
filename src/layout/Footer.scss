@@ -12,12 +12,12 @@
         left: 0;
         width: 0;
         height: 1px;
-        background-color: #8f6068;
+        background-color: var(--mantine-color-primary-6);
         transition: width 0.3s ease;
     }
 
     &:hover {
-        color: #8f6068 !important;
+        color: var(--mantine-color-primary-6) !important;
         transform: translateX(3px);
         text-decoration: none !important;
 

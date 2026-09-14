@@ -15,14 +15,14 @@ const TitleComponent = ({ fieldId, color }: TitleComponentProps) => {
                 align="center"
                 gap={{ base: 'sm', md: 'md' }}
                 px={{ base: 'md', md: 'lg' }}
-                bg={color ? theme.colors[color]?.[6] : theme.colors.rosePoudre[6]}
+                bg={color ? theme.colors[color]?.[6] : theme.colors.primary[6]}
                 style={{ borderRadius: '1rem' }}
             >
                 <PocketText
                     fieldId={fieldId}
                     c={'white'}
                     fz={{ base: 'lg', sm: 'xl', md: '1.75rem' }}
-                    ff="The Seasons, serif"
+                    ff="Cormorant Garamond, serif"
                 />
             </Flex>
         </Box>

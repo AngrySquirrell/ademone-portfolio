@@ -2,6 +2,12 @@ import { Accordion, Container, Group, ThemeIcon } from '@mantine/core';
 import { IconMessageCircleQuestion } from '@tabler/icons-react';
 import PocketText from '../PocketText';
 
+/**
+ * FAQ section for the contact page.
+ *
+ * TODO: Customize the number of FAQ items and their fieldIds.
+ * The questions and answers are managed via PocketBase (PocketText).
+ */
 const faqData = Array.from({ length: 4 }, (_, i) => ({
     id: `FAQ${i + 1}`,
     questionFieldId: `FAQQuestion${i + 1}`,
@@ -9,7 +15,6 @@ const faqData = Array.from({ length: 4 }, (_, i) => ({
 }));
 
 const ContactFAQ = () => {
-    return <></>;
     return (
         <>
             <Group justify="center" mt={'xl'}>
@@ -21,7 +26,7 @@ const ContactFAQ = () => {
             <PocketText ta={'center'} fz={'lg'} mt={'xs'} fieldId="ContactFAQTexte" />
 
             <Container size={'sm'} mb={'xl'}>
-                <Accordion variant="separated" color="orange" mt={'xl'}>
+                <Accordion variant="separated" color="primary" mt={'xl'}>
                     {faqData.map((faq) => (
                         <Accordion.Item key={faq.id} value={faq.id}>
                             <Accordion.Control>

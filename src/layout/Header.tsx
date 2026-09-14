@@ -1,19 +1,19 @@
-import { Burger, Button, Drawer, Flex, Image } from '@mantine/core';
+import { Burger, Button, Drawer, Flex, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { Link, NavLink, useLocation } from 'react-router';
 import './Header.scss';
-import logo from '../assets/logoAB3.svg';
 
 const Header = () => {
     const [opened, { toggle, close }] = useDisclosure(false);
     const location = useLocation();
 
+    // TODO: Customize navigation links for your project
     const navLinks = [
         { label: 'Accueil', path: '/' },
-        { label: 'Parcours & Présentation', path: '/parcours-presentation' },
-        { label: 'Approche & Soins', path: '/approche-soins' },
-        { label: 'Transmission & Supervision', path: '/transmission-supervision' },
-        { label: 'Contact', path: '/contact' },
+        { label: 'Page 2', path: '/page-2' },
+        { label: 'Page 3', path: '/page-3' },
+        { label: 'Page 4', path: '/page-4' },
+        { label: 'Page 5', path: '/page-5' },
     ];
 
     const isActive = (path: string) => location.pathname === path;
@@ -25,7 +25,6 @@ const Header = () => {
                 justify={'center'}
                 h="var(--app-shell-header-height)"
                 style={{
-                    // borderBottom: '1px solid #cbbd93',
                     backgroundColor: 'white',
                     position: 'sticky',
                     top: 0,
@@ -35,21 +34,17 @@ const Header = () => {
             >
                 <Flex justify="space-between" align={'center'} w="1200px" px="md">
                     <Link to="/" style={{ textDecoration: 'none' }}>
-                        <Image
-                            src={logo}
-                            alt={'Audrey Branly'}
-                            height={80}
-                            fit="contain"
-                            style={{ cursor: 'pointer' }}
-                            bdrs={'sm'}
-                        />
+                        {/* TODO: Replace with your logo */}
+                        <Text fw={700} fz="xl" c="primary">
+                            Mon Site
+                        </Text>
                     </Link>
 
                     <Flex gap={'xs'} visibleFrom="md" align={'center'}>
                         {navLinks.map((link) => (
                             <Button
                                 className={`header-link ${isActive(link.path) ? 'active' : ''}`}
-                                color={isActive(link.path) ? 'rosePoudre.7' : 'dark.7'}
+                                color={isActive(link.path) ? 'primary.7' : 'dark.7'}
                                 variant="white"
                                 component={NavLink}
                                 to={link.path}
@@ -72,7 +67,7 @@ const Header = () => {
                             to={link.path}
                             onClick={close}
                             variant="white"
-                            color={isActive(link.path) ? 'rosePoudre.7' : 'dark.7'}
+                            color={isActive(link.path) ? 'primary.7' : 'dark.7'}
                             size="xl"
                         >
                             {link.label}

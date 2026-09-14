@@ -16,7 +16,7 @@ function App() {
     return (
         <AppShell
             mih={'calc(100svh - var(--app-shell-header-height))'}
-            bg={'#f4f0ec'}
+            bg={'#f5f5f5'}
             header={{ height: 70 }}
             navbar={{
                 width: 300,

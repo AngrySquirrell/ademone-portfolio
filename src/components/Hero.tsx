@@ -43,7 +43,7 @@ const Hero = ({ title, description, backgroundImage, children, leftSection }: Ac
                                     fz={{ base: 25, sm: 32, md: 40 }}
                                     mb={0}
                                     fw={700}
-                                    ff="The Seasons, serif"
+                                    ff="Cormorant Garamond, serif"
                                 />
                                 <PocketText
                                     mt={'xs'}

@@ -1,6 +1,6 @@
 import { Box, Card, Loader, type CardProps } from '@mantine/core';
 import { useEffect, useState, type ReactNode } from 'react';
-import forestBackground from '../assets/forest_background.webp';
+import backgroundDefault from '../assets/background_1.webp';
 import { usePocketField } from '../providers/usePocketField';
 import Media from './Media';
 import { useAuthContext } from '@hydevs/hypb';
@@ -28,10 +28,10 @@ const PocketMedia = ({
     ...rest
 }: PocketMediaProps & CardProps) => {
     const { lookupMediaId } = usePocketField();
-    const [mediaSrc, setMediaSrc] = useState<string>(forestBackground);
+    const [mediaSrc, setMediaSrc] = useState<string>(backgroundDefault);
 
     useEffect(() => {
-        setMediaSrc(lookupMediaId(mediaId) ?? forestBackground);
+        setMediaSrc(lookupMediaId(mediaId) ?? backgroundDefault);
     }, [lookupMediaId, mediaId]);
 
     const { userData } = useAuthContext();

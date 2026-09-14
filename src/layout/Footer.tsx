@@ -5,16 +5,14 @@ import {
     Divider,
     Flex,
     Group,
-    Image,
     SimpleGrid,
     Text,
     ThemeIcon,
 } from '@mantine/core';
-import { IconBrandLinkedin, IconClock, IconMail, IconMapPin, IconPhone } from '@tabler/icons-react';
+import { IconClock, IconMail, IconMapPin, IconPhone } from '@tabler/icons-react';
 import { NavLink } from 'react-router';
 import PocketText from '../components/PocketText';
 import './Footer.scss';
-import logo from '../assets/logoAB2.svg';
 
 const Footer = () => {
     return (
@@ -23,15 +21,10 @@ const Footer = () => {
             <Container size="xl">
                 <Flex wrap={'wrap'} gap={{ base: 'xl', md: 50 }} justify="space-between">
                     <Box flex={1} miw={250}>
-                        <Image
-                            src={logo}
-                            alt={'Audrey Branly'}
-                            // height={'100%'}
-                            w={'80%'}
-                            fit="contain"
-                            style={{ cursor: 'pointer' }}
-                            bdrs={'sm'}
-                        />
+                        {/* TODO: Replace with your logo */}
+                        <Text fw={700} fz="xl" c="primary" mb="md">
+                            Mon Site
+                        </Text>
                         <PocketText
                             fieldId="FooterDescription"
                             fz={'sm'}
@@ -57,39 +50,39 @@ const Footer = () => {
                             </Anchor>
                             <Anchor
                                 component={NavLink}
-                                to="/parcours-presentation"
+                                to="/page-2"
                                 c="#666"
                                 size="sm"
                                 className="footer-link"
                             >
-                                Parcours & Présentation
+                                Page 2
                             </Anchor>
                             <Anchor
                                 component={NavLink}
-                                to="/approche-soins"
+                                to="/page-3"
                                 c="#666"
                                 size="sm"
                                 className="footer-link"
                             >
-                                Approche & Soins
+                                Page 3
                             </Anchor>
                             <Anchor
                                 component={NavLink}
-                                to="/transmission-supervision"
+                                to="/page-4"
                                 c="#666"
                                 size="sm"
                                 className="footer-link"
                             >
-                                Transmission & Supervision
+                                Page 4
                             </Anchor>
                             <Anchor
                                 component={NavLink}
-                                to="/contact"
+                                to="/page-5"
                                 c="#666"
                                 size="sm"
                                 className="footer-link"
                             >
-                                Contact
+                                Page 5
                             </Anchor>
                         </SimpleGrid>
                     </Box>
@@ -100,7 +93,7 @@ const Footer = () => {
                         </Text>
                         <Flex direction="column" gap="sm">
                             <Flex align="flex-start" gap="xs">
-                                <ThemeIcon variant="transparent" c={'rosePoudre.7'}>
+                                <ThemeIcon variant="transparent" c={'primary.7'}>
                                     <IconMapPin size={18} style={{ marginTop: 2 }} />
                                 </ThemeIcon>
                                 <PocketText
@@ -109,7 +102,7 @@ const Footer = () => {
                                 />
                             </Flex>
                             <Flex align="center" gap="xs">
-                                <ThemeIcon variant="transparent" c={'rosePoudre.7'}>
+                                <ThemeIcon variant="transparent" c={'primary.7'}>
                                     <IconPhone size={18} />
                                 </ThemeIcon>
                                 <PocketText
@@ -118,24 +111,13 @@ const Footer = () => {
                                 />
                             </Flex>
                             <Flex align="center" gap="xs">
-                                <ThemeIcon variant="transparent" c={'rosePoudre.7'}>
+                                <ThemeIcon variant="transparent" c={'primary.7'}>
                                     <IconMail size={18} />
                                 </ThemeIcon>
                                 <PocketText fieldId="Email" style={{ size: '1rem', c: '#666' }} />
                             </Flex>
                             <Flex align="center" gap="xs">
-                                <ThemeIcon variant="transparent" c={'rosePoudre.7'}>
-                                    <IconBrandLinkedin size={18} />
-                                </ThemeIcon>
-                                <PocketText
-                                    fieldId="LinkedIn"
-                                    link={true}
-                                    label="LinkedIn"
-                                    style={{ size: '1rem', c: '#666' }}
-                                />
-                            </Flex>
-                            <Flex align="center" gap="xs">
-                                <ThemeIcon variant="transparent" c={'rosePoudre.7'}>
+                                <ThemeIcon variant="transparent" c={'primary.7'}>
                                     <IconClock size={18} />
                                 </ThemeIcon>
                                 <PocketText fieldId="Heures" style={{ size: '1rem', c: '#666' }} />
@@ -148,7 +130,7 @@ const Footer = () => {
                     <Flex justify="space-evenly" align="center" gap={'sm'}>
                         <Flex direction={'column'}>
                             <Text ta="center" c="#666" size="sm">
-                                © {new Date().getFullYear()} Audrey Branly. Tous droits réservés.
+                                © {new Date().getFullYear()} Mon Site. Tous droits réservés.
                             </Text>
                             <Anchor
                                 component={NavLink}

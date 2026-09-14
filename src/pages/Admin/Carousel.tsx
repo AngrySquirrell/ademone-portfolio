@@ -1,4 +1,5 @@
 import { Hypb, useCollection } from '@hydevs/hypb';
+import { config } from '../../config';
 import {
     ActionIcon,
     Box,
@@ -25,7 +26,7 @@ const tableWidths = {
 
 // TODO CREATE HIGHEST AVAILABLE INDEX |eg. if 0,1,2,4 exists, new = 5
 const Carousel = () => {
-    const { records, invalidate, loading } = useCollection('audrey_carousel', {
+    const { records, invalidate, loading } = useCollection(config.collections.carousel, {
         queryParams: {
             sort: 'order',
         },
@@ -50,10 +51,10 @@ const Carousel = () => {
         if (targetIndex < 0 || targetIndex >= records.length) return;
         const currentMedia = records[index]; // media being moved
         const targetMedia = records[targetIndex]; // media to swap with
-        await Hypb.collection('audrey_carousel').update(currentMedia.id, {
+        await Hypb.collection(config.collections.carousel).update(currentMedia.id, {
             order: targetMedia.order,
         });
-        await Hypb.collection('audrey_carousel').update(targetMedia.id, {
+        await Hypb.collection(config.collections.carousel).update(targetMedia.id, {
             order: currentMedia.order,
         });
         invalidate();
@@ -61,7 +62,7 @@ const Carousel = () => {
 
     const handleSubmit = async (values: typeof form.values) => {
         form.reset();
-        await Hypb.collection('audrey_carousel').create({
+        await Hypb.collection(config.collections.carousel).create({
             // name: values.name,
             media: values.image,
             order: records.length > 0 ? Math.max(...records.map((r) => r.order)) + 1 : 0,
@@ -90,7 +91,7 @@ const Carousel = () => {
             },
             confirmProps: { color: 'red' },
             onConfirm: async () => {
-                await Hypb.collection('audrey_carousel').delete(id);
+                await Hypb.collection(config.collections.carousel).delete(id);
                 invalidate();
             },
         });

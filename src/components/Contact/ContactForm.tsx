@@ -5,6 +5,7 @@ import { notifications } from '@mantine/notifications';
 import { IconSend } from '@tabler/icons-react';
 import { useState } from 'react';
 import PocketButton from '../PocketButton';
+import { config } from '../../config';
 
 const objetsMessages = [
     "Demande d'information",
@@ -15,30 +16,15 @@ const objetsMessages = [
     'Autre',
 ];
 
-let initialValues = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-};
-initialValues = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-};
-if (window.location.hostname === 'localhost')
-    initialValues = {
-        name: 'Louis',
-        email: 'louis@example.com',
-        subject: "Demande d'information",
-        message: "J'ai besoin d'informations",
-    };
-
 const ContactForm = () => {
     const [loading, setLoading] = useState(false);
     const form = useForm({
-        initialValues: initialValues,
+        initialValues: {
+            name: '',
+            email: '',
+            subject: '',
+            message: '',
+        },
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Email invalide'),
         },
@@ -47,12 +33,12 @@ const ContactForm = () => {
     const handleSubmit = form.onSubmit(async (values) => {
         try {
             setLoading(true);
-            const result = await Hypb.pb.collection('isao_contact').create(values);
+            const result = await Hypb.pb.collection(config.collections.contact).create(values);
             if (result) {
                 notifications.show({
                     title: 'Message envoyé',
                     message:
-                        'Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.',
+                        'Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.',
                     color: 'primary',
                 });
                 setLoading(false);
@@ -72,7 +58,7 @@ const ContactForm = () => {
     return (
         <Box flex={1}>
             <Flex align="center" gap="md" mb="xl">
-                <Title order={2} fw={500} ff="The Seasons, serif">
+                <Title order={2} fw={500}>
                     Me contacter
                 </Title>
             </Flex>
@@ -113,16 +99,6 @@ const ContactForm = () => {
                         autosize
                     />
 
-                    {/* <Button
-                        loading={loading}
-                        type="submit"
-                        rightSection={<IconSend />}
-                        px="xl"
-                        ml={'auto'}
-                        color="rosePoudre.7"
-                    >
-                        Envoyer le message
-                    </Button> */}
                     <PocketButton
                         loading={loading}
                         type="submit"
@@ -131,7 +107,7 @@ const ContactForm = () => {
                         to=""
                         px="xl"
                         ml={'auto'}
-                        color="rosePoudre.7"
+                        color="primary.7"
                         fieldId="ContactFormSendButton"
                     />
                 </Flex>

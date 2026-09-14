@@ -2,12 +2,12 @@ import { SimpleGrid, Text, Title } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import GalleryModal from "../../components/GalleryModal";
 import { usePocketField } from "../../providers/usePocketField";
-import type { audrey_medias } from "../../types/globals";
+import type { site_medias } from "../../types/globals";
 import EditMediaCard from "../../components/EditMediaCard";
 
 const Gallery = () => {
     const { media } = usePocketField();
-    const handleFileModal = (media: audrey_medias) => {
+    const handleFileModal = (media: site_medias) => {
         modals.open({
             title: (
                 <Text>

@@ -1,29 +1,20 @@
 import { loginPB, useAuthContext } from '@hydevs/hypb';
-import { BackgroundImage, Button, Card, Flex, Group, Image, TextInput, Title } from '@mantine/core';
+import { BackgroundImage, Button, Card, Flex, Group, Text, TextInput, Title } from '@mantine/core';
 import { useForm } from '@mantine/form';
-import backgroundImg from '../../assets/forest_background.webp';
+import backgroundImg from '../../assets/background_1.webp';
 import { useNavigate } from 'react-router';
 import { notifications } from '@mantine/notifications';
 import { useEffect } from 'react';
-import logo from '../../assets/logoAB2.svg';
-
-let initialValues = {
-    email: '',
-    password: '',
-};
-
-if (window.location.hostname === 'localhost')
-    initialValues = {
-        email: 'admin@admin.com',
-        password: '123456789',
-    };
 
 const Login = () => {
     const n = useNavigate();
     const { userData } = useAuthContext();
 
     const form = useForm({
-        initialValues,
+        initialValues: {
+            email: '',
+            password: '',
+        },
 
         validate: {
             email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
@@ -55,8 +46,11 @@ const Login = () => {
                             }
                         })}
                     >
-                        <Image src={logo} w={300    } />
-                        <Title order={2} mb={'md'} mt={'xs'} ff="The Seasons, serif">
+                        {/* TODO: Replace with your logo */}
+                        <Text fw={700} fz="xl" c="primary" mb="md">
+                            Administration
+                        </Text>
+                        <Title order={2} mb={'md'} mt={'xs'}>
                             Connexion administrateur
                         </Title>
                         <Flex w={400} gap={12} direction={'column'}>

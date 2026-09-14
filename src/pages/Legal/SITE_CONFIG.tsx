@@ -1,19 +1,24 @@
+/**
+ * Site configuration for legal pages (Mentions Légales, Politique de Confidentialité).
+ *
+ * TODO: Fill in all values before deploying to production.
+ */
 export const SITE_CONFIG = {
-    name: 'Centre Isao',
-    url: 'https://www.centreisao.com',
+    name: '',
+    url: '',
     company: {
-        name: 'Centre Isao SARL',
-        email: 'centreisao@gmail.com',
-        address: '6 rue Jean Debay, 44000 Nantes',
-        capital: '[TO_BE_FILLED]',
-        rcs: '[TO_BE_FILLED]',
-        siret: '[TO_BE_FILLED]',
-        phone: '[TO_BE_FILLED]',
-        tva: '[TO_BE_FILLED]',
-        director: '[TO_BE_FILLED]',
+        name: '',
+        email: '',
+        address: '',
+        capital: '',
+        rcs: '',
+        siret: '',
+        phone: '',
+        tva: '',
+        director: '',
     },
     lastUpdate: {
-        politiqueDeConfidentialite: '26/11/2025',
-        mentionLegales: '26/11/2025',
+        politiqueDeConfidentialite: '',
+        mentionLegales: '',
     },
 };

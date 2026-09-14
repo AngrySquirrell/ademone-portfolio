@@ -3,9 +3,9 @@ import { logoutPB } from '@hydevs/hypb';
 import { Button, SimpleGrid, Title } from '@mantine/core';
 import { modals } from '@mantine/modals';
 import { useNavigate } from 'react-router';
-import galleryImage from '../../assets/forest_background.webp';
-import textImage from '../../assets/forest_background_2.webp';
-import carouselImage from '../../assets/forest_background_6.webp';
+import galleryImage from '../../assets/background_1.webp';
+import textImage from '../../assets/background_2.webp';
+import carouselImage from '../../assets/background_3.webp';
 import BackgroundImageCard from '../../components/BackgroundImageCard';
 
 const Dashboard = () => {

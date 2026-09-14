@@ -3,6 +3,7 @@ import { Carousel } from '@mantine/carousel';
 import Media from './Media';
 import { LoadingOverlay, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
+import { config } from '../config';
 
 const PocketCarousel = ({
     video,
@@ -17,7 +18,7 @@ const PocketCarousel = ({
 }) => {
     const theme = useMantineTheme();
     const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-    const { records, loading } = useCollection('audrey_carousel', {
+    const { records, loading } = useCollection(config.collections.carousel, {
         queryParams: {
             sort: 'order',
         },

@@ -2,9 +2,9 @@ import { Button, Divider, FileButton, Flex, Image } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import { useState } from "react";
 import { usePocketField } from "../providers/usePocketField";
-import type { audrey_medias } from "../types/globals";
+import type { site_medias } from "../types/globals";
 
-const GalleryModal = ({ img: media }: { img: audrey_medias }) => {
+const GalleryModal = ({ img: media }: { img: site_medias }) => {
     const [mediaFile, setMediaFile] = useState<File | null>(null);
     const { updateMedia, mediaInvalidate } = usePocketField();
     const [isLoading, setIsLoading] = useState<boolean>(false);

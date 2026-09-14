@@ -1,10 +1,11 @@
 import { Hypb, useAuthContext, useCollection } from '@hydevs/hypb';
 import React from 'react';
+import { config } from '../config';
 import { PocketfieldContext } from './PocketfieldProviderContext';
 
 // Les champs/médias référencés dans le JSX mais absents de la base sont créés à la
 // volée afin qu'ils apparaissent dans le back-office et deviennent éditables.
-// Réservé aux sessions admin : la collection audrey_medias refuse la création aux
+// Réservé aux sessions admin : la collection refuse la création aux
 // visiteurs anonymes, et cela évite que le site public alimente la base.
 // `attempted` évite d'envoyer une requête à chaque rendu pour un même identifiant.
 const attemptedFields = new Set<string>();
@@ -14,7 +15,7 @@ const createFieldInit = async (fieldId: string, onCreated: () => void) => {
     if (!fieldId || attemptedFields.has(fieldId)) return;
     attemptedFields.add(fieldId);
     try {
-        await Hypb.collection('audrey_texts').create({
+        await Hypb.collection(config.collections.texts).create({
             fieldId,
             value: fieldId,
         });
@@ -28,7 +29,7 @@ const createMediaInit = async (mediaId: string, onCreated: () => void) => {
     if (!mediaId || attemptedMedias.has(mediaId)) return;
     attemptedMedias.add(mediaId);
     try {
-        await Hypb.collection('audrey_medias').create({
+        await Hypb.collection(config.collections.medias).create({
             mediaId,
         });
         onCreated();
@@ -44,7 +45,7 @@ export const PocketfieldProvider = ({ children }: { children: React.ReactNode })
         records: textsRecord,
         loading: textsLoading,
         invalidate: textsInvalidate,
-    } = useCollection('audrey_texts', {
+    } = useCollection(config.collections.texts, {
         defaultValue: [],
         pageParams: { perPage: 1000 },
     });
@@ -52,7 +53,7 @@ export const PocketfieldProvider = ({ children }: { children: React.ReactNode })
         records: mediaRecords,
         loading: mediaLoading,
         invalidate: mediaInvalidate,
-    } = useCollection('audrey_medias', {
+    } = useCollection(config.collections.medias, {
         defaultValue: [],
     });
 
@@ -66,7 +67,7 @@ export const PocketfieldProvider = ({ children }: { children: React.ReactNode })
         if (!textItem) {
             return;
         }
-        await Hypb.collection('audrey_texts').update(textItem.id, { value });
+        await Hypb.collection(config.collections.texts).update(textItem.id, { value });
         textsInvalidate();
     };
 
@@ -82,7 +83,7 @@ export const PocketfieldProvider = ({ children }: { children: React.ReactNode })
     const updateMedia = async (mediaId: string, value: File) => {
         const mediaItem = mediaRecords?.find((item) => item.mediaId === mediaId);
         if (!mediaItem) console.log(`[Error] Item ${mediaId} not found.`);
-        await Hypb.collection('audrey_medias').update(mediaItem!.id, {
+        await Hypb.collection(config.collections.medias).update(mediaItem!.id, {
             media: value,
         });
         mediaInvalidate();
