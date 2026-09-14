@@ -24,7 +24,7 @@ export const config = {
 
     /** Public site metadata */
     site: {
-        name: (import.meta.env.VITE_SITE_NAME as string) ?? 'Mon Site',
+        name: (import.meta.env.VITE_SITE_NAME as string) ?? 'MISSING_VITE_SITE_NAME_IN_ENV',
         url: (import.meta.env.VITE_SITE_URL as string) ?? '',
     },
 

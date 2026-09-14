@@ -13,7 +13,6 @@ import { RouterProvider } from 'react-router/dom';
 import App from './App';
 import AdminBreadcrumbs from './components/AdminBreadcrumbs';
 import ProtectedRoute from './components/ProtectedRoute';
-import TextsPage from './pages/Admin/Texts';
 import NotFound from './pages/NotFound';
 import { PocketfieldProvider } from './providers/PocketfieldProvider';
 import SuspenseFallback from './SuspenseFallback';
@@ -21,9 +20,7 @@ import { theme } from './scripts/theme';
 import { config } from './config';
 const Page1 = lazy(() => import('./pages/Page1'));
 const Dashboard = lazy(() => import('./pages/Admin/Dashboard'));
-const Gallery = lazy(() => import('./pages/Admin/Gallery'));
 const Page5 = lazy(() => import('./pages/Page5'));
-const Login = lazy(() => import('./pages/Admin/Login'));
 const Page2 = lazy(() => import('./pages/Page2'));
 const Page3 = lazy(() => import('./pages/Page3'));
 const Page4 = lazy(() => import('./pages/Page4'));
@@ -32,7 +29,7 @@ const MENTION_LEGALES = lazy(() => import('./pages/Legal/MentionLegales'));
 import './index.css';
 import '@mantine/carousel/styles.css';
 import { ErrorBoundary } from './components/ErrorBoundary';
-import Carousel from './pages/Admin/Carousel';
+import Login from './pages/Admin/Login';
 
 const router = createBrowserRouter([
     {
@@ -96,18 +93,6 @@ const router = createBrowserRouter([
                             {
                                 path: '',
                                 element: <Dashboard />,
-                            },
-                            {
-                                path: 'gallery',
-                                element: <Gallery />,
-                            },
-                            {
-                                path: 'textes',
-                                element: <TextsPage />,
-                            },
-                            {
-                                path: 'Carousel',
-                                element: <Carousel />,
                             },
                         ],
                     },

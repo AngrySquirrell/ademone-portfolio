@@ -10,7 +10,7 @@ import { Box, Container } from '@mantine/core';
 const Page1 = () => {
     return (
         <Box>
-            <Container py={64}>
+            <Container py={64} h={10000}>
                 {/* TODO: Add your home page content */}
             </Container>
         </Box>

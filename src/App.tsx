@@ -15,9 +15,9 @@ function App() {
 
     return (
         <AppShell
-            mih={'calc(100svh - var(--app-shell-header-height))'}
+            mih={'100svh'}
             bg={'#f5f5f5'}
-            header={{ height: 70 }}
+            header={{ height: 0 }}
             navbar={{
                 width: 300,
                 breakpoint: 'sm',
@@ -32,7 +32,8 @@ function App() {
             </AppShell.Header>
 
             <AppShell.Main
-                mih={'calc(100svh - var(--app-shell-header-height))'}
+                mih={'calc(100svh - 144px)'}
+                pt={144}
                 display={'flex'}
                 style={{
                     flexDirection: 'column',

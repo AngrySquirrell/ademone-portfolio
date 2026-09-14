@@ -10,10 +10,9 @@ const Header = () => {
     // TODO: Customize navigation links for your project
     const navLinks = [
         { label: 'Accueil', path: '/' },
-        { label: 'Page 2', path: '/page-2' },
-        { label: 'Page 3', path: '/page-3' },
-        { label: 'Page 4', path: '/page-4' },
-        { label: 'Page 5', path: '/page-5' },
+        { label: 'Portrait', path: '/page-2' },
+        { label: 'Studio', path: '/page-3' },
+        { label: 'Contact', path: '/page-5' },
     ];
 
     const isActive = (path: string) => location.pathname === path;
@@ -25,18 +24,28 @@ const Header = () => {
                 justify={'center'}
                 h="var(--app-shell-header-height)"
                 style={{
-                    backgroundColor: 'white',
+                    // backgroundColor: 'red',
                     position: 'sticky',
-                    top: 0,
+                    // top: 0,
                     zIndex: 100,
-                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                    margin: 24,
+                    marginTop: 64
                 }}
             >
-                <Flex justify="space-between" align={'center'} w="1200px" px="md">
+                <Flex justify="space-between" align={'center'} w="1200px" px="md" style={{
+                    padding: 24,
+                    // backgroundColor: 'blue',
+                    borderRadius: 16,
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(3.3px)",
+                    WebkitBackdropFilter: "blur(3.3px)",
+                    border: "1px solid rgba(255, 255, 255, 0.13)",
+                    backgroundColor: 'rgba(255, 255, 255, 0.09)'
+                }}>
                     <Link to="/" style={{ textDecoration: 'none' }}>
                         {/* TODO: Replace with your logo */}
                         <Text fw={700} fz="xl" c="primary">
-                            Mon Site
+                            Ademone Photo
                         </Text>
                     </Link>
 

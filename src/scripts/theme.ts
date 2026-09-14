@@ -8,9 +8,9 @@ import { Button, Container, createTheme, Text, Title } from '@mantine/core';
  * Use https://mantine.dev/colors-generator/ to generate palettes from a hex value.
  */
 export const theme = createTheme({
-    fontFamily: '"Poppins", sans-serif',
+    fontFamily: '"Comfortaa", serif',
     headings: {
-        fontFamily: '"Cormorant Garamond", serif',
+        fontFamily: '"Lexend", sans-serif',
         fontWeight: '700',
     },
     defaultRadius: 'md',
@@ -66,7 +66,7 @@ export const theme = createTheme({
         }),
         Button: Button.extend({
             defaultProps: {
-                ff: '"Poppins", sans-serif',
+                ff: '"Comfortaa", serif',
             },
         }),
     },
