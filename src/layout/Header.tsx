@@ -1,88 +1,117 @@
-import { Burger, Button, Drawer, Flex, Text } from '@mantine/core';
+import { Box, Burger, Button, Drawer, Group, Stack, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { Link, NavLink, useLocation } from 'react-router';
-import './Header.scss';
+import { IconMessageCircle } from '@tabler/icons-react';
+import { Link, useLocation } from 'react-router';
+import classes from './Header.module.css';
 
 const Header = () => {
     const [opened, { toggle, close }] = useDisclosure(false);
     const location = useLocation();
 
-    // TODO: Customize navigation links for your project
     const navLinks = [
-        { label: 'Accueil', path: '/' },
-        { label: 'Portrait', path: '/page-2' },
-        { label: 'Studio', path: '/page-3' },
-        { label: 'Contact', path: '/page-5' },
+        { label: 'Accueil', href: '#accueil' },
+        { label: 'Projets', href: '#projets' },
     ];
 
-    const isActive = (path: string) => location.pathname === path;
+    const currentHash = location.hash || '#accueil';
 
     return (
         <>
-            <Flex
-                align={'center'}
-                justify={'center'}
-                h="var(--app-shell-header-height)"
-                style={{
-                    // backgroundColor: 'red',
-                    position: 'sticky',
-                    // top: 0,
-                    zIndex: 100,
-                    margin: 24,
-                    marginTop: 64
-                }}
-            >
-                <Flex justify="space-between" align={'center'} w="1200px" px="md" style={{
-                    padding: 24,
-                    // backgroundColor: 'blue',
-                    borderRadius: 16,
-                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-                    backdropFilter: "blur(3.3px)",
-                    WebkitBackdropFilter: "blur(3.3px)",
-                    border: "1px solid rgba(255, 255, 255, 0.13)",
-                    backgroundColor: 'rgba(255, 255, 255, 0.09)'
-                }}>
-                    <Link to="/" style={{ textDecoration: 'none' }}>
-                        {/* TODO: Replace with your logo */}
-                        <Text fw={700} fz="xl" c="primary">
-                            Ademone Photo
-                        </Text>
+            <Box className={classes.headerWrapper}>
+                <Box className={classes.island}>
+                    {/* Brand Identifier */}
+                    <Link to="/" className={classes.brandLink}>
+                        <span className={classes.brandDot} />
+                        <span className={classes.brandText}>ADEMONE</span>
                     </Link>
 
-                    <Flex gap={'xs'} visibleFrom="md" align={'center'}>
+                    {/* Center Nav Links: Accueil, Projets */}
+                    <Group gap="xl" visibleFrom="md">
                         {navLinks.map((link) => (
-                            <Button
-                                className={`header-link ${isActive(link.path) ? 'active' : ''}`}
-                                color={isActive(link.path) ? 'primary.7' : 'dark.7'}
-                                variant="white"
-                                component={NavLink}
-                                to={link.path}
-                                key={link.path}
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                className={`${classes.navLink} ${
+                                    currentHash === link.href ? classes.navLinkActive : ''
+                                }`}
                             >
                                 {link.label}
-                            </Button>
+                            </a>
                         ))}
-                    </Flex>
-                    <Burger opened={opened} onClick={toggle} hiddenFrom="md" size="sm" />
-                </Flex>
-            </Flex>
+                    </Group>
 
-            <Drawer opened={opened} onClose={close} size="100%" position="right" hiddenFrom="md">
-                <Flex direction="column" gap="lg" p="md">
-                    {navLinks.map((link) => (
+                    {/* Trailing Action: Me contacter */}
+                    <Group gap="md">
                         <Button
-                            key={link.path}
-                            component={NavLink}
-                            to={link.path}
+                            component="a"
+                            href="#contact"
+                            className={classes.ctaButton}
+                            leftSection={<IconMessageCircle size={16} />}
+                            visibleFrom="sm"
+                        >
+                            Me contacter
+                        </Button>
+                        <Burger
+                            opened={opened}
+                            onClick={toggle}
+                            hiddenFrom="md"
+                            size="sm"
+                            color="white"
+                            aria-label="Menu de navigation"
+                        />
+                    </Group>
+                </Box>
+            </Box>
+
+            {/* Mobile Drawer */}
+            <Drawer
+                opened={opened}
+                onClose={close}
+                size="100%"
+                position="right"
+                hiddenFrom="md"
+                styles={{
+                    content: {
+                        backgroundColor: '#131315',
+                        color: 'white',
+                    },
+                    header: {
+                        backgroundColor: '#131315',
+                        color: 'white',
+                    },
+                }}
+                title={
+                    <Group gap="xs">
+                        <span className={classes.brandDot} />
+                        <Text fw={700} ff="Lexend, sans-serif" lts="0.1em" c="white">
+                            ADEMONE
+                        </Text>
+                    </Group>
+                }
+            >
+                <Stack gap="xl" p="md" mt="xl">
+                    {navLinks.map((link) => (
+                        <a
+                            key={link.href}
+                            href={link.href}
                             onClick={close}
-                            variant="white"
-                            color={isActive(link.path) ? 'primary.7' : 'dark.7'}
-                            size="xl"
+                            className={classes.navLink}
+                            style={{ fontSize: '1.25rem' }}
                         >
                             {link.label}
-                        </Button>
+                        </a>
                     ))}
-                </Flex>
+                    <Button
+                        component="a"
+                        href="#contact"
+                        onClick={close}
+                        className={classes.ctaButton}
+                        size="lg"
+                        leftSection={<IconMessageCircle size={20} />}
+                    >
+                        Me contacter
+                    </Button>
+                </Stack>
             </Drawer>
         </>
     );

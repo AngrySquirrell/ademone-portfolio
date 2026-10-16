@@ -1,5 +1,7 @@
 import { Image } from '@mantine/core';
 
+const FALLBACK_SRC = 'https://placehold.co/600x400?text=MISSING+IMAGE+ID';
+
 const isVideo = (src: string) => {
     return src.endsWith('.mp4') || src.endsWith('.webm') || src.endsWith('.mpeg');
 };
@@ -49,6 +51,7 @@ const Media = ({
     ) : (
         <Image
             src={mediaSrc}
+            fallbackSrc={FALLBACK_SRC}
             alt=""
             pos={'absolute'}
             top={0}

@@ -1,20 +1,11 @@
-import { Box, Container } from '@mantine/core';
+import HomePage from './Home';
 
 /**
- * Page 1 — Home page.
- *
- * TODO: Build your home page content here.
- * Use PocketText, PocketMedia, Hero, TitleComponent and other
- * reusable components from the components/ directory.
+ * Page 1 — Home page (Accueil)
+ * Glassmorphic Photography Portfolio
  */
 const Page1 = () => {
-    return (
-        <Box>
-            <Container py={64} h={10000}>
-                {/* TODO: Add your home page content */}
-            </Container>
-        </Box>
-    );
+    return <HomePage />;
 };
 
 export default Page1;

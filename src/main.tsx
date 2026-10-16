@@ -115,7 +115,7 @@ const root = document.getElementById('root')!;
 
 ReactDOM.createRoot(root).render(
     <StrictMode>
-        <MantineProvider theme={theme}>
+        <MantineProvider theme={theme} defaultColorScheme={'dark'}>
             <AuthProvider>
                 <PocketfieldProvider>
                     <ModalsProvider>

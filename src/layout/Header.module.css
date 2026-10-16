@@ -1,0 +1,101 @@
+.headerWrapper {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    z-index: 1000;
+}
+
+.island {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    background: rgba(19, 19, 21, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-out;
+}
+
+.brandLink {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--mantine-color-white);
+    transition: color 0.2s ease;
+}
+
+.brandDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    background-color: var(--mantine-color-primary-5);
+    box-shadow: 0 0 12px var(--mantine-color-primary-5);
+    animation: pulseGlow 2.5s infinite;
+}
+
+.brandText {
+    font-family: var(--font-display, 'Lexend', sans-serif);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mantine-color-white);
+}
+
+.navLink {
+    font-family: var(--font-display, 'Lexend', sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: #c7c6c6;
+    padding: 0.25rem 0.5rem;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.navLink:hover {
+    color: var(--mantine-color-primary-5);
+}
+
+.navLinkActive {
+    color: var(--mantine-color-primary-5);
+    border-bottom: 2px solid var(--mantine-color-primary-5);
+    padding-bottom: 0.25rem;
+}
+
+.ctaButton {
+    background-color: var(--mantine-color-primary-5);
+    color: var(--mantine-color-white);
+    font-family: var(--font-display, 'Lexend', sans-serif);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+    background-color: var(--mantine-color-primary-6);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 42, 63, 0.38);
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.65;
+        transform: scale(0.9);
+    }
+}

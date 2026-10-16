@@ -15,38 +15,46 @@ export const theme = createTheme({
     },
     defaultRadius: 'md',
     colors: {
-        // === PRIMARY COLOR ===
-        // TODO: Replace with your brand color
         primary: [
-            '#f5f5f5',
-            '#e8e8e8',
-            '#d1d1d1',
-            '#bababa',
-            '#a3a3a3',
-            '#8c8c8c',
-            '#757575',
-            '#5e5e5e',
-            '#4a4a4a',
-            '#333333',
+            '#FFEDEB', //0 T95
+            '#FFDAD8', //1 T90
+            '#FFB3B0', //2 T80
+            '#FF8986', //3 T70
+            '#FF5357', //4 T60
+            '#FF2A3F', //5 MAIN
+            '#EB1533', //6 T50
+            '#930019', //7 T30
+            '#68000F', //8 T20
+            '#410006', //9 T0
         ],
-        // === SECONDARY COLOR ===
-        // TODO: Replace with your secondary brand color
         secondary: [
-            '#faf9f4',
-            '#f5f3e9',
-            '#ebe7d3',
-            '#e1dbbd',
-            '#d6cfa8',
-            '#cbbd93',
-            '#ab9f7c',
-            '#8b8165',
-            '#6b634e',
-            '#4b4537',
+            '#F2F0F0', //0 T95
+            '#E3E2E2', //1 T90
+            '#C7C6C6', //2 T80
+            '#ABABAB', //3 T70
+            '#919191', //4 T60
+            '#8C8C8C', //5 MAIN
+            '#777777', //6 T50
+            '#464747', //7 T30
+            '#2F3031', //8 T20
+            '#000000', //9 T0
+        ],
+        tertiary: [
+            '#FFEDE4', //0 T95
+            '#FFDCC5', //1 T90
+            '#FFB783', //2 T80
+            '#FF8E2C', //3 T70
+            '#DF7300', //4 T60
+            '#E67700', //5 MAIN
+            '#B95F00', //6 T50
+            '#713700', //7 T30
+            '#4F2500', //8 T20
+            '#000000', //9 T0
         ],
     },
     primaryShade: 5,
-    black: '#4a4a4a',
-    white: '#ffffff',
+    black: '#0A0A0C',
+    white: '#FFFFFF',
     primaryColor: 'primary',
     components: {
         Container: Container.extend({
@@ -56,7 +64,7 @@ export const theme = createTheme({
         }),
         Text: Text.extend({
             defaultProps: {
-                c: '#4a4a4a',
+                c: '#e5e1e4',
             },
         }),
         Title: Title.extend({
@@ -66,7 +74,7 @@ export const theme = createTheme({
         }),
         Button: Button.extend({
             defaultProps: {
-                ff: '"Comfortaa", serif',
+                ff: '"Lexend", serif',
             },
         }),
     },

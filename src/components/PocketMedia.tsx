@@ -1,9 +1,9 @@
 import { Box, Card, Loader, type CardProps } from '@mantine/core';
 import { useEffect, useState, type ReactNode } from 'react';
-import backgroundDefault from '../assets/background_1.webp';
 import { usePocketField } from '../providers/usePocketField';
 import Media from './Media';
-import { useAuthContext } from '@hydevs/hypb';
+
+const FALLBACK_SRC = 'https://placehold.co/600x400?text=MISSING+IMAGE+ID';
 
 interface PocketMediaProps {
     mediaId: string;
@@ -28,36 +28,35 @@ const PocketMedia = ({
     ...rest
 }: PocketMediaProps & CardProps) => {
     const { lookupMediaId } = usePocketField();
-    const [mediaSrc, setMediaSrc] = useState<string>(backgroundDefault);
+    const [mediaSrc, setMediaSrc] = useState<string>(FALLBACK_SRC);
 
     useEffect(() => {
-        setMediaSrc(lookupMediaId(mediaId) ?? backgroundDefault);
+        const found = lookupMediaId(mediaId);
+        // Si l'image existe dans PocketBase et n'est pas le placeholder par défaut de création vide
+        if (found && !found.includes('media%20vide')) {
+            setMediaSrc(found);
+        } else {
+            setMediaSrc(FALLBACK_SRC);
+        }
     }, [lookupMediaId, mediaId]);
 
-    const { userData } = useAuthContext();
-
-    if (!userData?.id && mediaSrc.startsWith('https://placehold.co/')) {
-        return null;
-    }
     return (
-        <>
-            <Card p={p} bg={'transparent'} radius={radius} {...rest} pos="relative">
-                {mediaSrc ? (
-                    <Media mediaSrc={mediaSrc} cover={cover} video={video} />
-                ) : (
-                    <Loader
-                        pos={'absolute'}
-                        style={{
-                            top: '50%',
-                            left: '50%',
-                            transform: 'translate(-50%, -50%)',
-                        }}
-                    />
-                )}
+        <Card p={p} bg={'transparent'} radius={radius} {...rest} pos="relative">
+            {mediaSrc ? (
+                <Media mediaSrc={mediaSrc} cover={cover} video={video} />
+            ) : (
+                <Loader
+                    pos={'absolute'}
+                    style={{
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                    }}
+                />
+            )}
 
-                <Box style={{ zIndex: 1 }}>{children}</Box>
-            </Card>
-        </>
+            <Box style={{ zIndex: 1, position: 'relative', height: '100%' }}>{children}</Box>
+        </Card>
     );
 };
 

@@ -1,0 +1,368 @@
+<!DOCTYPE html><html class="dark" lang="fr" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Adèle Mone — Photographe Indépendante &amp; Direction Artistique</title>
+<!-- Google Fonts: Newsreader (Editorial Serif), Lexend, Comfortaa -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;600;700&amp;family=Lexend:wght@300;400;500;600;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS with Forms and Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed-variant": "#713700",
+            "primary-fixed-dim": "#ffb3b0",
+            "surface-container-lowest": "#0e0e10",
+            "on-tertiary": "#4f2500",
+            "on-tertiary-fixed": "#301400",
+            "on-primary-container": "#5c000c",
+            "tertiary-container": "#df7300",
+            "tertiary": "#ffb783",
+            "on-primary-fixed-variant": "#930019",
+            "on-secondary-fixed": "#1b1c1c",
+            "surface-tint": "#ffb3b0",
+            "primary": "#ffb3b0",
+            "surface-variant": "#353437",
+            "surface-dim": "#131315",
+            "on-primary": "#68000f",
+            "outline": "#ae8785",
+            "primary-container": "#ff5357",
+            "on-surface": "#e5e1e4",
+            "secondary-container": "#464747",
+            "primary-fixed": "#ffdad8",
+            "secondary-fixed": "#e3e2e2",
+            "on-background": "#e5e1e4",
+            "tertiary-fixed-dim": "#ffb783",
+            "tertiary-fixed": "#ffdcc5",
+            "inverse-primary": "#bf0024",
+            "secondary-fixed-dim": "#c7c6c6",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#313032",
+            "on-tertiary-container": "#451f00",
+            "surface": "#131315",
+            "secondary": "#c7c6c6",
+            "on-primary-fixed": "#410006",
+            "on-secondary-fixed-variant": "#464747",
+            "on-error": "#690005",
+            "surface-container-highest": "#353437",
+            "on-surface-variant": "#e7bcba",
+            "on-secondary-container": "#b5b5b5",
+            "surface-bright": "#39393b",
+            "error": "#ffb4ab",
+            "inverse-surface": "#e5e1e4",
+            "surface-container-high": "#2a2a2c",
+            "error-container": "#93000a",
+            "background": "#131315",
+            "surface-container-low": "#1c1b1d",
+            "outline-variant": "#5d3f3d",
+            "surface-container": "#201f21",
+            "on-secondary": "#2f3031"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-2xl": "4rem",
+            "margin": "2rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "1.5rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "body-bold": ["Comfortaa"],
+            "headline-section": ["Lexend"],
+            "headline-card": ["Lexend"],
+            "display-title-mobile": ["Newsreader"],
+            "display-hero-mobile": ["Newsreader"],
+            "button-label": ["Lexend"],
+            "display-title": ["Newsreader"],
+            "display-hero": ["Newsreader"],
+            "caption": ["Comfortaa"],
+            "metadata-mono": ["Lexend"],
+            "body-base": ["Comfortaa"]
+          },
+          "fontSize": {
+            "body-bold": ["15px", { "lineHeight": "26px", "letterSpacing": "0", "fontWeight": "600" }],
+            "headline-section": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-card": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }],
+            "display-title-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "button-label": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "display-title": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero": ["44px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "caption": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "metadata-mono": ["11px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500" }],
+            "body-base": ["15px", { "lineHeight": "26px", "letterSpacing": "0", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    /* Animated atmospheric blobs */
+    @keyframes blob-drift-1 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(60px, -70px) scale(1.12); }
+      66% { transform: translate(-40px, 45px) scale(0.92); }
+    }
+    @keyframes blob-drift-2 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      40% { transform: translate(-80px, 60px) scale(1.15); }
+      75% { transform: translate(50px, -40px) scale(0.88); }
+    }
+    @keyframes blob-drift-3 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(70px, 50px) scale(1.2); }
+    }
+
+    .animate-blob-1 {
+      animation: blob-drift-1 22s ease-in-out infinite;
+    }
+    .animate-blob-2 {
+      animation: blob-drift-2 28s ease-in-out infinite;
+    }
+    .animate-blob-3 {
+      animation: blob-drift-3 25s ease-in-out infinite;
+    }
+
+    /* Ambient halo glow effects for photo cards */
+    .glow-cyan {
+      box-shadow: 0 16px 40px -10px rgba(0, 180, 216, 0.22);
+    }
+    .glow-amber {
+      box-shadow: 0 16px 40px -10px rgba(255, 183, 131, 0.24);
+    }
+    .glow-crimson {
+      box-shadow: 0 16px 40px -10px rgba(255, 42, 63, 0.32);
+    }
+    .glow-emerald {
+      box-shadow: 0 16px 40px -10px rgba(46, 196, 182, 0.22);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-white min-h-screen relative overflow-x-hidden font-body-base text-body-base">
+<!-- ATMOSPHERIC ANIMATED BLOBS WITH FROSTED GLASS OVERLAY -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<!-- Vivid Crimson Core Blob -->
+<div class="absolute -top-32 -left-20 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-on-primary-container via-[#ff2a3f] to-primary-container opacity-25 filter blur-[120px] animate-blob-1"></div>
+<!-- Warm Amber Secondary Blob -->
+<div class="absolute top-[35%] -right-28 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-tertiary-container via-tertiary to-outline-variant opacity-20 filter blur-[140px] animate-blob-2"></div>
+<!-- Deep Obsidian Crimson Atmospheric Blob -->
+<div class="absolute -bottom-40 left-[20%] w-[680px] h-[680px] rounded-full bg-gradient-to-r from-on-primary via-[#930019] to-surface-variant opacity-25 filter blur-[150px] animate-blob-3"></div>
+<!-- Soft Optical Glass Diffuser Scrim with subtle filmic texture -->
+<div class="absolute inset-0 bg-background/70 backdrop-blur-[55px]"></div>
+</div>
+<!-- FLOATING NAVIGATION ISLAND -->
+<header class="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-[1200px] rounded-xl z-50 bg-surface/60 dark:bg-surface-container-lowest/60 backdrop-blur-md border border-outline-variant/30 dark:border-outline-variant/20 shadow-[0_20px_40px_rgba(0,0,0,0.60)] transition-all duration-300 ease-out">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<!-- Brand Identifier -->
+<a class="text-headline-section font-headline-section tracking-widest text-on-surface dark:text-on-surface uppercase hover:text-primary transition-colors duration-200 flex items-center gap-3" href="#">
+<span class="w-2.5 h-2.5 rounded-full bg-[#ff2a3f] shadow-[0_0_12px_#ff2a3f] inline-block animate-pulse"></span>ADEMONE&nbsp;</a>
+<!-- Center Nav Links -->
+<nav aria-label="Navigation principale" class="hidden md:flex items-center space-x-8">
+<a class="text-primary dark:text-primary font-button-label text-button-label border-b-2 border-primary pb-1 transition-all duration-300" href="#accueil">
+          Accueil
+        </a>
+<a class="text-secondary dark:text-secondary-fixed font-button-label text-button-label hover:text-primary dark:hover:text-primary hover:border-primary/50 transition-all duration-300" href="#projets">Projets</a>
+
+
+</nav>
+<!-- Trailing Action: Discuter / Projets -->
+<div class="flex items-center space-x-4">
+<a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#ff2a3f] text-white font-button-label text-button-label transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,42,63,0.38)] active:scale-[0.98]" href="#contact">
+<span class="material-symbols-outlined text-[16px]">chat_bubble_outline</span>
+          Me contacter
+        </a>
+</div>
+</div>
+</header>
+<main class="relative z-10 pt-36 pb-24 max-w-[1200px] mx-auto px-margin-mobile md:px-margin" id="accueil">
+<!-- HERO SECTION ÉDITORIALE & INTIME -->
+<section class="mb-space-2xl pt-4 md:pt-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left: Personal Statement & Vision -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-outline-variant/30 bg-surface-container-lowest/50 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-[#ff2a3f]"></span>
+<span class="font-metadata-mono text-metadata-mono uppercase tracking-wider text-secondary">Lorem Ipsum • Dolor Sit Amet</span>
+</div>
+<h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface leading-tight tracking-tight">Lorem ipsum dolor sit amet. <br class=""><span class="italic font-normal text-secondary-fixed">Consectetur adipiscing elit</span> sed do eiusmod tempor.</h1>
+<p class="font-body-base text-body-base text-secondary max-w-xl text-justify md:text-left leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate.</p>
+<!-- CTAs personnels -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg bg-[#ff2a3f] text-white font-button-label text-button-label hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,42,63,0.35)] transition-all duration-300" href="#projets">
+              Découvrir mes Projets<span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3.5 rounded-lg border border-outline-variant/30 bg-surface-container-lowest/40 backdrop-blur-md text-on-surface font-button-label text-button-label hover:border-primary/50 hover:bg-surface-container-lowest/70 transition-all duration-300" href="#contact">Collaborer
+            </a>
+</div>
+</div>
+<!-- Right: Sensible Note & Direct Voice Card -->
+<div class="lg:col-span-5 mt-8 lg:mt-0">
+<div class="p-space-lg md:p-8 rounded-2xl border border-white/10 bg-white/[0.05] backdrop-blur-xl relative overflow-hidden space-y-6 shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex items-center justify-between">
+<span class="font-metadata-mono text-metadata-mono text-[#ff2a3f] uppercase tracking-wider">REGARD &amp; PRATIQUE</span>
+<span class="font-metadata-mono text-metadata-mono text-secondary px-2.5 py-0.5 rounded-full bg-surface-container-highest/60 border border-white/5">Basée à Paris</span>
+</div>
+<p class="font-display-title text-[20px] md:text-[22px] leading-snug text-on-surface italic">« Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. »</p>
+<div class="grid grid-cols-2 gap-3 pt-2 border-t border-outline-variant/20">
+<div>
+<p class="font-metadata-mono text-[10px] text-secondary uppercase tracking-widest">OBSESSIONS</p>
+<p class="font-body-base text-[13px] text-on-surface mt-1">Lorem ipsum, dolor sit, consectetur</p>
+</div>
+<div>
+<p class="font-metadata-mono text-[10px] text-secondary uppercase tracking-widest"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Lorem Ipsum 2025</p>
+<p class="font-body-base text-[13px] text-[#ffb3b0] mt-1 flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Lorem Ipsum 2025</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION SÉLECTION DE SÉRIES PHOTOGRAPHIQUES (PERSONAL WORKS) -->
+<section class="mb-space-2xl" id="projets">
+<!-- Section Header with Curatorial Filter Indicator -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<span class="font-metadata-mono text-metadata-mono text-[#ff2a3f] uppercase tracking-wider">PROJETS &amp; SÉRIES PERSONNELLES</span>
+<h2 class="font-headline-section text-headline-section text-on-surface tracking-tight mt-1">Lorem Ipsum Dolor &amp; Sit Amet</h2>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto pb-1"><span class="px-3.5 py-1.5 rounded-full border border-primary-container/40 bg-primary-container/10 text-white font-metadata-mono text-metadata-mono uppercase tracking-wider">Tout les projets</span><span class="px-3.5 py-1.5 rounded-full border border-outline-variant/20 bg-surface-container-lowest/40 text-secondary font-metadata-mono text-metadata-mono uppercase tracking-wider hover:text-on-surface transition-colors cursor-pointer">Japon 2026</span><span class="px-3.5 py-1.5 rounded-full border border-outline-variant/20 bg-surface-container-lowest/40 text-secondary font-metadata-mono text-metadata-mono uppercase tracking-wider hover:text-on-surface transition-colors cursor-pointer">Projet 1</span><span class="px-3.5 py-1.5 rounded-full border border-outline-variant/20 bg-surface-container-lowest/40 text-secondary font-metadata-mono text-metadata-mono uppercase tracking-wider hover:text-on-surface transition-colors cursor-pointer">Projet 2</span></div>
+</div>
+<!-- Asymmetrical Editorial Glass Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Artwork 1: Large Featured Portrait (Amber Glow) -->
+<article class="md:col-span-8 group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.07] backdrop-blur-md p-3 glow-amber transition-all duration-500 hover:border-white/20">
+<div class="relative w-full h-[460px] rounded-xl overflow-hidden bg-surface-container-lowest">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" data-alt="An evocative contemporary fine art photographic portrait captured in deep chiaroscuro lighting. A solitary female subject partially emerges from absolute velvety obsidian darkness, her profile contoured by a delicate, warm amber candlelight glow. The visual style embodies high dynamic range film photography, subtle grain textures, profound contrast, and minimalist Parisian studio elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtYrgvZ0rp3ObF77rItZkA-1DdDQzQXIXlfkym_t9zk0-_hEXe6huiOu2yHwsAbE8yWbFiBIY6zG0fW3C-2UoKqFkDLEU-o1VUh-cr8GvHrVR7FmQhyuu4uNyTcc_ZSTdQ87aumr4wLH9wNQxVz0iKLhZIOLqVUVIwYhSNPOOUNnOMo4cI5cm13AvpJbG81Qq2W6Ogqgy-2hG2Ar04g84AyMSzenZreRkX6qc8z_5QqF-INjfosNntdQ">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050507]/90 via-[#050507]/20 to-transparent"></div>
+
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-metadata-mono text-metadata-mono text-tertiary uppercase tracking-wider">Personnel • portraits OMBRagés</span>
+<h3 class="font-display-title text-display-title text-on-surface mt-0.5">Lorem Ipsum Dolor</h3>
+</div>
+</div>
+<div class="mt-3 px-3 py-2 flex flex-wrap items-center justify-between text-secondary gap-2"><span class="font-metadata-mono text-metadata-mono text-on-surface font-semibold">2024</span><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary shadow-[0_0_8px_rgba(255,183,131,0.6)]"></span><span class="font-metadata-mono text-metadata-mono text-tertiary uppercase">#FFB783</span></div></div>
+</article>
+<!-- Artwork 2: Nocturnal Architecture (Cyan Glow) -->
+<article class="md:col-span-4 group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.07] backdrop-blur-md p-3 glow-cyan transition-all duration-500 hover:border-white/20 flex flex-col">
+<div class="relative w-full h-[460px] rounded-xl overflow-hidden bg-surface-container-lowest flex-1">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" data-alt="A striking nocturnal architectural photograph featuring brutalist monolithic concrete structures silhouetted against a deep indigo twilight sky. Cold cinematic cyan backlight slices through geometric shadows, reflecting subtly on damp asphalt. High contrast fine art photography with clinical framing, minimal composition, and an authoritative nocturnal atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBADjIbPQCL6EOrJhHrx1SG4UCkRvXKL4xMYUKE22pGQ028U5MFMEjOdU7oComWN3COGt3niJGmDRYbWToqiMJdoCR_75zc9KTdPXdmILSZLJsMGjCK4n-r8ydsk0i7aoUc-Ry4LturJnUj_gqAddhKhK5Hms4wCnAXxyK4akYB5jMKvKCukABVnphC80pEH0Kc3ESNbHWpZ-8kGNQpx16HuUnu-2YiIOzac2f92WcK15oTSHVtK8T9JA">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050507]/90 via-[#050507]/20 to-transparent"></div>
+
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-metadata-mono text-metadata-mono text-[#00b4d8] uppercase tracking-wider">Personnel • Brutalisme</span>
+<h3 class="font-headline-card text-headline-card text-on-surface mt-0.5">Consectetur Adipiscing</h3>
+</div>
+</div>
+<div class="mt-3 px-3 py-2 flex flex-wrap items-center justify-between text-secondary gap-2">
+<span class="font-metadata-mono text-metadata-mono text-on-surface font-semibold">2024</span>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#00b4d8] shadow-[0_0_8px_rgba(0,180,216,0.6)]"></span>
+<span class="font-metadata-mono text-metadata-mono text-[#00b4d8] uppercase">#00B4D8</span>
+</div>
+</div>
+</article>
+<!-- Artwork 3: Cinematic Rainy Street Scene (Emerald Glow) -->
+<article class="md:col-span-5 group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.07] backdrop-blur-md p-3 glow-emerald transition-all duration-500 hover:border-white/20 flex flex-col">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden bg-surface-container-lowest flex-1">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" data-alt="A cinematic street photography capture during a nocturnal rain shower in an old European alleyway. Subtle neon emerald and jade highlights shimmer across slick, reflective cobblestones and misty air, casting long solitary human shadows into the darkness. Moody, contemplative fine art visual direction in deep obsidian and emerald tints." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCnW5ipmXTueCQt2_nrcQYMmGHvNhmUT8BUh_ICQH8XMqLLBjQ5bbuc4kY7uP2vS4hjS5bRKMz0cc2HGYxoHbt9912cnlhUP_x1Du8z2iN9RA1LQkrCgl-XQefGrTzVy2zy9vGuOhB0D04xvCvZj5iMb9lDxYIdlB1xhLeky7kOL9VHr68Cg0dzh2Kl-ckRc08mmDlJWj6Q6ivrx8nGldKu_kePpSzN14Kdks4e2fD3B3yM_IdPWv2A">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050507]/90 via-[#050507]/20 to-transparent"></div>
+
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-metadata-mono text-metadata-mono text-[#2ec4b6] uppercase tracking-wider">SÉRIE • SOLITUDES URBAINES</span>
+<h3 class="font-headline-card text-headline-card text-on-surface mt-0.5">Tempor Incididunt</h3>
+</div>
+</div>
+<div class="mt-3 px-3 py-2 flex flex-wrap items-center justify-between text-secondary gap-2">
+<span class="font-metadata-mono text-metadata-mono text-on-surface font-semibold">2026</span>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#2ec4b6] shadow-[0_0_8px_rgba(46,196,182,0.6)]"></span>
+<span class="font-metadata-mono text-metadata-mono text-[#2ec4b6] uppercase">#2EC4B6</span>
+</div>
+</div>
+</article>
+<!-- Artwork 4: Bold Crimson Experimental Study (Crimson Glow) -->
+<article class="md:col-span-7 group relative rounded-2xl overflow-hidden border border-white/10 bg-white/[0.07] backdrop-blur-md p-3 glow-crimson transition-all duration-500 hover:border-white/20 flex flex-col">
+<div class="relative w-full h-[400px] rounded-xl overflow-hidden bg-surface-container-lowest flex-1">
+<img class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" data-alt="An abstract avant-garde fashion and light experiment photography piece. A dancer's swift movement is frozen in motion through stark strobe lighting against pitch darkness, accented by pure vibrant crimson laser streaks and darkroom safelight halos. The visual composition is intense, sculptural, modern, and bathed in saturated deep scarlet and monochrome shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_MVsKDnqfWjeZdcaO6DmW66T_nc64KltApTs_VBnMbyr3TvGRicBhsAaINpM6EI1RfyKaQjrchbW6uSXIDX_7drGn3DQMRJ9UDGwR4eNTqgS-LXJzQQrEpTwglqs-NbLFXatHHxCBHi9Jyrmla0kNrhFCpGLcsH05EprM604lsy6zHUPRT16iPha_H-gR6oZFrtZAaQt-R3eStvv3O_ZqgeFqIaa_kiM_RX1_48EOttnQgunjT-2Hzw">
+<div class="absolute inset-0 bg-gradient-to-t from-[#050507]/90 via-[#050507]/20 to-transparent"></div>
+
+<div class="absolute bottom-4 left-4 right-4">
+<span class="font-metadata-mono text-metadata-mono text-[#ff2a3f] uppercase tracking-wider">SÉRIE • CHOC LUMINEUX</span>
+<h3 class="font-display-title text-display-title text-on-surface mt-0.5">Magna Aliqua Enim</h3>
+</div>
+</div>
+<div class="mt-3 px-3 py-2 flex flex-wrap items-center justify-between text-secondary gap-2"><span class="font-metadata-mono text-metadata-mono text-on-surface font-semibold">2025</span><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-[#ff2a3f] shadow-[0_0_8px_rgba(255,42,63,0.8)]"></span><span class="font-metadata-mono text-metadata-mono text-[#ff2a3f] uppercase">#FF2A3F</span></div></div>
+</article>
+</div>
+</section>
+<!-- SECTION CARNET DE ROUTE & DÉMARCHE CRÉATIVE -->
+<section class="mb-space-2xl" id="demarche">
+<div class="rounded-3xl p-8 md:p-12 border border-outline-variant/30 bg-surface-container-lowest/60 backdrop-blur-xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-[#ff2a3f]/10 filter blur-[100px] pointer-events-none"></div>
+<div class="relative z-10 space-y-10">
+<!-- En-tête de section -->
+<div class="max-w-2xl"><span class="font-metadata-mono text-metadata-mono text-[#ff2a3f] uppercase tracking-wider">LOREM IPSUM &amp; DOLOR SIT</span><h2 class="font-display-title text-display-title text-on-surface mt-2">Lorem ipsum dolor: amet consectetur adipiscing elit</h2><p class="font-body-base text-body-base text-secondary mt-3">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo.</p></div>
+<!-- Cartes d'inspiration -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="p-6 rounded-2xl bg-white/[0.04] border border-white/5 space-y-3"><div class="w-10 h-10 rounded-xl bg-[#ff2a3f]/10 border border-[#ff2a3f]/30 flex items-center justify-center text-[#ff2a3f]"><span class="material-symbols-outlined text-[22px]">movie</span></div><h3 class="font-headline-card text-headline-card text-on-surface">Lorem Ipsum Primus</h3><p class="font-body-base text-[14px] text-secondary leading-relaxed">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.</p></div><div class="p-6 rounded-2xl bg-white/[0.04] border border-white/5 space-y-3"><div class="w-10 h-10 rounded-xl bg-tertiary/10 border border-tertiary/30 flex items-center justify-center text-tertiary"><span class="material-symbols-outlined text-[22px]">dark_mode</span></div><h3 class="font-headline-card text-headline-card text-on-surface">Secundus Dolor Sit</h3><p class="font-body-base text-[14px] text-secondary leading-relaxed">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div><div class="p-6 rounded-2xl bg-white/[0.04] border border-white/5 space-y-3"><div class="w-10 h-10 rounded-xl bg-[#00b4d8]/10 border border-[#00b4d8]/30 flex items-center justify-center text-[#00b4d8]"><span class="material-symbols-outlined text-[22px]">psychology_alt</span></div><h3 class="font-headline-card text-headline-card text-on-surface">Tertius Consectetur</h3><p class="font-body-base text-[14px] text-secondary leading-relaxed">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p></div></div>
+</div>
+</div>
+</section>
+<!-- SECTION COLLABORATION & INVITATION À ÉCHANGER -->
+<section class="mb-space-xl" id="contact">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl p-8 md:p-12 border border-outline-variant/30 bg-surface-container-lowest/40 backdrop-blur-md">
+<div class="lg:col-span-7 space-y-4"><div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-outline-variant/30 bg-surface-container-lowest/50 backdrop-blur-md"><span class="w-2 h-2 rounded-full bg-emerald-400"></span><span class="font-metadata-mono text-metadata-mono uppercase tracking-wider text-secondary">Lorem ipsum dolor &amp; sit amet</span></div><h2 class="font-display-title text-display-title text-on-surface">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</h2><p class="font-body-base text-body-base text-secondary max-w-xl">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure.</p></div>
+<div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-4 justify-end">
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-[#ff2a3f] text-white font-button-label text-button-label text-center transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(255,42,63,0.4)] active:scale-[0.98]" href="mailto:adele@noiretlumiere.art">
+<span class="material-symbols-outlined mr-2 text-[20px]">send</span>
+            Envoyer un message</a>
+<a class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-outline-variant/30 bg-surface-container-lowest/70 text-on-surface font-button-label text-button-label text-center hover:border-primary/50 transition-all duration-300" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined mr-2 text-[20px]">photo_camera</span>
+            Me retrouver sur Instagram
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full border-t border-outline-variant/20 dark:border-outline-variant/20 bg-surface-container-lowest/80 dark:bg-surface-container-lowest/80 backdrop-blur-md">
+<div class="max-w-[1200px] mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<!-- Logo & Copyright Text -->
+<div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+<span class="text-headline-card font-headline-card text-on-surface dark:text-on-surface tracking-wider">
+          ADEMONE</span>
+<span class="hidden md:inline text-outline-variant">•</span>
+<p class="text-caption font-caption text-secondary">
+          © 2026 ADEMONE</p>
+</div>
+<!-- Links -->
+<nav aria-label="Liens de pied de page" class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-secondary dark:text-secondary-fixed font-metadata-mono text-metadata-mono uppercase tracking-wider transition-colors duration-200 hover:text-primary dark:hover:text-primary" href="#accueil">
+          À propos
+        </a>
+
+<a class="text-secondary dark:text-secondary-fixed font-metadata-mono text-metadata-mono uppercase tracking-wider transition-colors duration-200 hover:text-primary dark:hover:text-primary" href="https://instagram.com" rel="noopener noreferrer" target="_blank">
+          Instagram
+        </a>
+<a class="text-secondary dark:text-secondary-fixed font-metadata-mono text-metadata-mono uppercase tracking-wider transition-colors duration-200 hover:text-primary dark:hover:text-primary" href="#contact">Contact</a>
+</nav>
+</div>
+</footer>
+
+
+</body></html>
